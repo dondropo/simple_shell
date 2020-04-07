@@ -13,6 +13,6 @@
 
 /*FUNCTIONS*/
 extern char **environ;
-int _prompt(char *buff);
+int _prompt(int error);
 
 #endif
