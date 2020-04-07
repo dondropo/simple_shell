@@ -3,15 +3,16 @@
 
 /*LIBRARIES*/
 #include <stdio.h>
-#include <sdtlib.h>
+#include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <string.h>
-#include <signals.h>
+#include <signal.h>
 
 /*FUNCTIONS*/
 extern char **environ;
+int _prompt(char *buff);
 
 #endif
