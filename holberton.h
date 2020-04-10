@@ -17,4 +17,6 @@ int _prompt(int error);
 char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
 
+char **token(char *string, const char *delim);
+
 #endif
