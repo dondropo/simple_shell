@@ -14,5 +14,7 @@
 /*FUNCTIONS*/
 extern char **environ;
 int _prompt(int error);
+char *_strdup(char *str);
+char *str_concat(char *s1, char *s2);
 
 #endif
