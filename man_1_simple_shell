@@ -1,0 +1,23 @@
+.\" Handbook for simple_shell.
+.\" Contact 1630@holbertonschool.com or 1515@holbertonschool.com to correct error or typos
+.TH man 1 "10/04/APR 2020" "1.0" "SIMPLE_SHELL"
+.SH NAME
+simple_shell
+.SH SYPNOSIS
+input command [options] [file]
+.SH DESCRIPTION
+This simple_shell was created to be a similar way for read and interpret the user input commands
+and manage files like the original UNIX based Shell.
+.SH OPTIONS
+simple_shell has a specific argumentation with some flags for each input according the the action to be carried out by the user, 
+like the following examples:\n
+
+\n [program name] [file name] -> runs an installed program and executes a file through the running program
+.SH SEE ALSO
+pag (1)
+.SH BUGS
+No known bugs.
+.SH AUTHORS
+\n Jose Omar Espinosa Ramirez (1630@holbertonschool.com)
+
+\n Alejandro Rusca Moreno (1515@holbertonschool.com)
