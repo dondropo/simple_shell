@@ -2,26 +2,18 @@
 
 /**
  * _prompt - prompt
- * @error: error case
+ *
  * Return: read line
  */
-int _prompt(int error)
+void _prompt(void)
 {
-	char *buff;
-	size_t buff_size = 0;
-	int x;
-	__pid_t ppid;
 
-	ppid = getppid();
-	while (1)
+	if (isatty(STDIN_FILENO))
 	{
-		printf("$ ");
-		x = getline(&buff, &buff_size, stdin);
-		printf("%s", buff);
-		if (x == -1)
-		{
-			break;
-		}
+		write(1, "Cisfun->$ ", 10);
 	}
-	return (ppid);
+	// else
+	// {
+	// 	write(2, "Issued command \n", 15);
+	// }
 }
