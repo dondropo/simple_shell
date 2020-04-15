@@ -1,35 +1,44 @@
 #include "holberton.h"
+/**
+ *execute - executes a command
+ *
+ *@av: double pointer for argument value
+ *
+ *Return: returns to 0
+ */
 
-int execute(char **arguments)
+int execute(char **av)
 {
-    //char *argv[] = {"/bin/ls", "-la", "/home/joer9514/projects/simple_shell", NULL};
+	__pid_t pid;
+	int status = 0;
+	struct stat st;
 
-    if (execve(arguments[0], arguments, NULL) == -1)
-    {
-        perror("Command not found:");
-    }
-    return (0);
-}
+	if (stat(av[1], &st) == 0)
+	{
+		if (access(av[1], X_OK) == 0)
+		{
+			pid = fork();
+			if (pid == -1)
+			{
+				perror("Error");
+				exit(1);
+			}
+			if (pid == 0)
+			{
+				execve(av[1], av, NULL);
+			}
+			else
+			{
+				wait(&status);
+			}
+		}
+		else
+		{
+			printf("permission denied\n");
+		}
+		return (0);
+	}
+	printf("command not found\n");
 
-int main(__attribute__((unused)) int ac, char **av)
-{
-    __pid_t pid;
-    int status;
-
-    pid = fork();
-    if (pid == -1)
-    {
-        perror("Error");
-        exit(1);
-    }
-    if (pid == 0)
-    {
-        execute(av);
-    }
-    else
-    {
-        wait(&status);
-    }
-    
-    return (0);
+	return (0);
 }

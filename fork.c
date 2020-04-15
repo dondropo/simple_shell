@@ -1,7 +1,11 @@
 #include "holberton.h"
+/**
+ * _fork - copies a process
+ *
+ *Return: returns to 0
+ */
 
-
-int main(void)
+pid_t _fork(void)
 {
 	int chk = 33;
 	pid_t iden;

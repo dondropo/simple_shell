@@ -12,8 +12,4 @@ void _prompt(void)
 	{
 		write(1, "Cisfun->$ ", 10);
 	}
-	// else
-	// {
-	// 	write(2, "Issued command \n", 15);
-	// }
 }

@@ -15,9 +15,9 @@
 extern char **environ;
 char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
-
 void _prompt(void);
 char **token(char *string, const char *delim);
-int execute();
+int execute(char **av);
+pid_t _fork(void);
 
 #endif
