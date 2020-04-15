@@ -12,7 +12,6 @@ int main(int ac, char **av)
 	size_t buffer_size = ac;
 	int infinite = 1;
 	char **aux = NULL;
-	int i = 0;
 
 	do {
 		_prompt();

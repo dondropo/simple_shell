@@ -9,9 +9,9 @@
 
 int execute(char **av)
 {
-	__pid_t pid = 0;
+	pid_t pid = 0;
 	int status = 0;
-	struct stat *st;
+	struct stat st;
 
 	if (stat(av[1], &st) == 0)
 	{

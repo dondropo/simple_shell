@@ -10,6 +10,7 @@
 #include <sys/wait.h>
 #include <string.h>
 #include <signal.h>
+#include <sys/stat.h>
 
 /*FUNCTIONS*/
 extern char **environ;
