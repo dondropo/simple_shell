@@ -9,9 +9,9 @@
 
 int execute(char **av)
 {
-	__pid_t pid;
+	__pid_t pid = 0;
 	int status = 0;
-	struct stat st;
+	struct stat *st;
 
 	if (stat(av[1], &st) == 0)
 	{
@@ -34,11 +34,10 @@ int execute(char **av)
 		}
 		else
 		{
-			printf("permission denied\n");
+			write(1, "permission denied\n", 19);
 		}
 		return (0);
 	}
-	printf("command not found\n");
-
+	write(1, "command not found\n", 19);
 	return (0);
 }

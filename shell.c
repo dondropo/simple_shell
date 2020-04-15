@@ -11,22 +11,15 @@ int main(int ac, char **av)
 	char *buffer = av[1];
 	size_t buffer_size = ac;
 	int infinite = 1;
-	char **aux;
+	char **aux = NULL;
 	int i = 0;
 
 	do {
 		_prompt();
 		if (getline(&buffer, &buffer_size, stdin) != EOF)
 		{
-			write(1, buffer, buffer_size);
-			aux = token(buffer, "/- ");
-			while (aux[i])
-			{
-				printf("%s\n", aux[i]);
-				i++;
-			}
-			printf("%s\n", buffer);
-			execute(av);
+			aux = token(buffer, "/");
+			execute(aux);
 		}
 		else
 		{
