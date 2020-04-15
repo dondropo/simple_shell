@@ -38,6 +38,9 @@ int execute(char **av)
 		}
 		return (0);
 	}
-	write(1, "command not found\n", 19);
+	else
+	{
+		write(1, "command not found\n", 19);
+	}
 	return (0);
 }
