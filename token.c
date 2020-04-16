@@ -12,17 +12,15 @@ char **token(char *string, const char *delim)
 	char **array;
 	char *pnt;
 	int i = 0;
-	int hay_palabra = 0, j = 0;
+	int count_delim = 0;
 
 	while (string[i] != '\0')
 	{
-		if (hay_palabra == 0 && (string[i] != ' ' || string[i] != '\n'))
-			hay_palabra = 1, j++;
-		else if (hay_palabra == 1 && (string[i] == ' ' || string[i] == '\n'))
-			hay_palabra = 0;
+		if (string[i] == *delim)
+			count_delim++;
 		i++;
 	}
-	array = malloc((j + 1) * sizeof(char *));
+	array = malloc((count_delim + 2) * sizeof(char *));
 	if (array == NULL)
 	{
 		perror("El array es nulo");
