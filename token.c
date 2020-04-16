@@ -12,21 +12,23 @@ char **token(char *string, const char *delim)
 	char **array;
 	char *pnt;
 	int i = 0;
-	int count_delim = 0;
+	int hay_palabra = 0, j = 0;
 
 	while (string[i] != '\0')
 	{
-		if (string[i] == *delim)
-			count_delim++;
+		if (hay_palabra == 0 && (string[i] != ' ' || string[i] != '\n'))
+			hay_palabra = 1, j++;
+		else if (hay_palabra == 1 && (string[i] == ' ' || string[i] == '\n'))
+			hay_palabra = 0;
 		i++;
 	}
-	array = malloc((count_delim + 2) * sizeof(char *));
+	array = malloc((j + 1) * sizeof(char *));
 	if (array == NULL)
 	{
 		perror("El array es nulo");
 		exit(1);
 	}
-	pnt = _strdup(string);
+	pnt = strdup(string);
 	token = strtok(pnt, delim);
 	i = 0;
 	while (token != NULL)

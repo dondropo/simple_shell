@@ -6,16 +6,15 @@
  * @av: arguments
  * Return: int
  */
-int main(int ac, char **av)
+int main(__attribute__((unused)) int ac, char **av)
 {
-	char *buffer = av[1];
-	size_t buffer_size = ac;
+	char *buffer;
+	size_t buffer_size = 0;
 	int infinite = 1;
 	char **aux = NULL;
 	int i = 0;
 
-	do
-	{
+	do {
 		_prompt();
 		if (getline(&buffer, &buffer_size, stdin) != EOF)
 		{
@@ -24,6 +23,7 @@ int main(int ac, char **av)
 			{
 				aux = token(buffer, " \n\t\r");
 				execute(aux, av[0], i);
+				/*free(buffer);*/
 			}
 		}
 		else
@@ -32,6 +32,7 @@ int main(int ac, char **av)
 		}
 		free_aux(aux);
 	} while (infinite);
+	free_aux(aux);
 	free(buffer);
 	return (0);
 }
