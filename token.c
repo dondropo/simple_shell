@@ -26,7 +26,7 @@ char **token(char *string, const char *delim)
 		perror("El array es nulo");
 		exit(1);
 	}
-	pnt = strdup(string);
+	pnt = _strdup(string);
 	token = strtok(pnt, delim);
 	i = 0;
 	while (token != NULL)

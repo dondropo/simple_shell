@@ -14,7 +14,8 @@ int main(int ac, char **av)
 	char **aux = NULL;
 	int i = 0;
 
-	do {
+	do
+	{
 		_prompt();
 		if (getline(&buffer, &buffer_size, stdin) != EOF)
 		{
@@ -23,17 +24,15 @@ int main(int ac, char **av)
 			{
 				aux = token(buffer, " \n\t\r");
 				execute(aux, av[0], i);
-				free_aux(aux);
 			}
 		}
 		else
 		{
 			exit(0);
 		}
-		/*free(buffer);*/
+		free_aux(aux);
 	} while (infinite);
 	free(buffer);
-	free_aux(aux);
 	return (0);
 }
 /**
