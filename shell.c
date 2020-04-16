@@ -28,7 +28,7 @@ int main(int ac, char **av)
 		}
 		else
 		{
-			return (buffer_size);
+			exit(98);
 		}
 		free(buffer);
 	} while (infinite);
