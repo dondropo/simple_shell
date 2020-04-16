@@ -36,15 +36,15 @@ int execute(char **cmd, char *av, int cmd_num)
 		}
 		else
 		{
-			dprintf(STDERR_FILENO, "%s: %d: %s: permission
-				denied\n", av, cmd_num, cmd[0]);
+			dprintf(STDERR_FILENO, "%s: %d: %s: permission denied\n"
+			, av, cmd_num, cmd[0]);
 		}
 		return (0);
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "%s: %d: %s: command
-			not found\n", av, cmd_num, cmd[0]);
+		dprintf(STDERR_FILENO, "%s: %d: %s: command not found\n"
+		, av, cmd_num, cmd[0]);
 	}
 	return (0);
 }
