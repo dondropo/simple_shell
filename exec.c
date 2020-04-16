@@ -2,20 +2,22 @@
 /**
  *execute - executes a command
  *
- *@av: double pointer for argument value
+ *@cmd: double pointer for argument value
+ *@av: arguments
+ *@cmd_num: command number
  *
  *Return: returns to 0
  */
 
-int execute(char **av)
+int execute(char **cmd, char *av, int cmd_num)
 {
 	pid_t pid = 0;
 	int status = 0;
 	struct stat st;
 
-	if (stat(av[1], &st) == 0)
+	if (stat(cmd[0], &st) == 0)
 	{
-		if (access(av[1], X_OK) == 0)
+		if (access(cmd[0], X_OK) == 0)
 		{
 			pid = fork();
 			if (pid == -1)
@@ -25,7 +27,7 @@ int execute(char **av)
 			}
 			if (pid == 0)
 			{
-				execve(av[1], av, NULL);
+				execve(cmd[0], cmd, NULL);
 			}
 			else
 			{
@@ -34,13 +36,15 @@ int execute(char **av)
 		}
 		else
 		{
-			write(1, "permission denied\n", 19);
+			dprintf(STDERR_FILENO, "%s: %d: %s: permission
+				denied\n", av, cmd_num, cmd[0]);
 		}
 		return (0);
 	}
 	else
 	{
-		write(1, "command not found\n", 19);
+		dprintf(STDERR_FILENO, "%s: %d: %s: command
+			not found\n", av, cmd_num, cmd[0]);
 	}
 	return (0);
 }
