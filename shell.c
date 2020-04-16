@@ -30,7 +30,7 @@ int main(int ac, char **av)
 		{
 			exit(0);
 		}
-		free(buffer);
+		/*free(buffer);*/
 	} while (infinite);
 	free(buffer);
 	free_aux(aux);
