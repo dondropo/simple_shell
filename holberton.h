@@ -23,5 +23,6 @@ void free_aux(char **aux);
 int strtok1(char *string, char *delim);
 int strtok2(char *string, char *delim);
 char *_strtok(char *string, char *delim);
+int words_counter(char *s);
 
 #endif
