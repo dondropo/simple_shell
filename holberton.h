@@ -20,5 +20,8 @@ char **token(char *string, const char *delim);
 int execute(char **av, char *, int);
 int check_buffer(char *buffer);
 void free_aux(char **aux);
+int strtok1(char *string, char *delim);
+int strtok2(char *string, char *delim);
+char *_strtok(char *string, char *delim);
 
 #endif
