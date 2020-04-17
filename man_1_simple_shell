@@ -11,6 +11,8 @@ and manage files like the original UNIX based Shell.
 .SH OPTIONS
 simple_shell has a specific argumentation with some flags for each input according the the action to be carried out by the user, 
 like the following examples:\n
+\n ./hsh [command with its rute] [options]
+\n .hsh [bin/ls] [-l]
 
 \n [program name] [file name] -> runs an installed program and executes a file through the running program
 .SH SEE ALSO

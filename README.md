@@ -1,4 +1,4 @@
-# 0x16. C - Simple Shell
+# C Simple Shell
 
 ## Resources:books:
 _Read or watch:_
@@ -8,7 +8,7 @@ _Read or watch:_
 * [Everything you need to know to start coding your own shell](https://intranet.hbtn.io/concepts/64)
 
 _man or help:_
-* ```sh``` (Run ```sh``` as well)
+* ```man_1_simple_shell``` (Run ```man_1_simple_shell``` as well)
 
 ---
 ## Learning Objectives:bulb:
@@ -46,9 +46,6 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 * All your header files should be include guarded
 * Use system calls only when you need to ([why?](https://www.quora.com/Why-are-system-calls-expensive-in-operating-systems))
 
-### Github
-
-_There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score._
 
 # More Info
 ## Output
@@ -140,9 +137,12 @@ hsh main.c shell.c test_ls_2
 $
 ```
 
-### Checks
+### How to use
 
-There will be no checks released before the deadline. We _strongly_ encourage the entire class to work together to create a suite of checks covering both regular tests and edge cases for each task. See task ```2. Test suite.```
+After compile all .C's in this repository with gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+run hsh as an executable file, like this: ./hsh
+
+
 
 ## Authors
 * _Jose Omar Espinosa Ramirez_ [joer9514](https://github.com/joer9514)
