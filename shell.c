@@ -25,15 +25,21 @@ int main(int ac, char **av)
 				execute(aux, av[0], i);
 				free_aux(aux);
 			}
+			free(buffer);
+			buffer = NULL;
 		}
 		else
 		{
-			exit(0);
+			free(buffer);
+			break;
 		}
-		free(buffer);
+		
+		
 	} while (infinite);
-	free(buffer);
-	free_aux(aux);
+	if (isatty(STDIN_FILENO))
+	{
+		write(1, "\n", 1);
+	}
 	return (0);
 }
 /**

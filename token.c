@@ -1,5 +1,32 @@
 #include "holberton.h"
+/**
+ *words_counter - counts the words into the input
+ *
+ *@s: pointer to count words
+ *
+ *Return: w value
+ */
+int words_counter(char *s)
+{
+	int i, w = 0, is_word = 0;
 
+	for (i = 0; s[i]; i++)
+	{
+		if (is_word == 0 && (s[i] != ' ' && s[i] != '\n'
+			 && s[i] != '\t' && s[i] != '\r'))
+		{
+			w++;
+			is_word = 1;
+		}
+		else if (is_word == 1 && (s[i] == ' ' || s[i] == '\n'
+			 || s[i] == '\t' || s[i] == '\r'))
+			{
+				is_word = 0;
+			}
+	}
+	printf ("%d\n", w);
+	return (w);
+}
 /**
  * token - function to split strings with a specific delimiter
  * @string: text string for analysis
@@ -12,15 +39,8 @@ char **token(char *string, const char *delim)
 	char **array;
 	char *pnt;
 	int i = 0;
-	int count_delim = 0;
 
-	while (string[i] != '\0')
-	{
-		if (string[i] == *delim)
-			count_delim++;
-		i++;
-	}
-	array = malloc((count_delim + 2) * sizeof(char *));
+	array = malloc((words_counter(string) + 1) * sizeof(char *));
 	if (array == NULL)
 	{
 		perror("El array es nulo");
@@ -36,5 +56,6 @@ char **token(char *string, const char *delim)
 		i++;
 	}
 	array[i] = NULL;
+	free(token);
 	return (array);
 }
