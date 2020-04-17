@@ -139,7 +139,7 @@ $
 
 ### How to use
 
-After compile all .C's in this repository with gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+After compile all .C's in this repository with gcc -Wall -Werror -Wextra -pedantic *.c -o hsh\n
 run hsh as an executable file, like this: ./hsh
 
 
