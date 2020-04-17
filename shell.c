@@ -33,8 +33,6 @@ int main(int ac, char **av)
 			free(buffer);
 			break;
 		}
-		
-		
 	} while (infinite);
 	if (isatty(STDIN_FILENO))
 	{

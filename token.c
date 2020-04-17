@@ -13,18 +13,17 @@ int words_counter(char *s)
 	for (i = 0; s[i]; i++)
 	{
 		if (is_word == 0 && (s[i] != ' ' && s[i] != '\n'
-			 && s[i] != '\t' && s[i] != '\r'))
+					&& s[i] != '\t' && s[i] != '\r'))
 		{
 			w++;
 			is_word = 1;
 		}
 		else if (is_word == 1 && (s[i] == ' ' || s[i] == '\n'
-			 || s[i] == '\t' || s[i] == '\r'))
-			{
-				is_word = 0;
-			}
+					|| s[i] == '\t' || s[i] == '\r'))
+		{
+			is_word = 0;
+		}
 	}
-	printf ("%d\n", w);
 	return (w);
 }
 /**
