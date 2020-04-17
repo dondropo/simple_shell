@@ -31,7 +31,7 @@ int main(int ac, char **av)
 		else
 		{
 			free(buffer);
-			break;
+		exit(0);
 		}
 	} while (infinite);
 	if (isatty(STDIN_FILENO))
