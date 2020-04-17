@@ -15,12 +15,9 @@
 /*FUNCTIONS*/
 extern char **environ;
 char *_strdup(char *str);
-char *str_concat(char *s1, char *s2);
 void _prompt(void);
 char **token(char *string, const char *delim);
 int execute(char **av, char *, int);
-pid_t _fork(void);
-int _strcmp(char *s1, char *s2);
 int check_buffer(char *buffer);
 void free_aux(char **aux);
 
